@@ -82,7 +82,6 @@ describe('Longest Palindromic Substring tests', function() {
 
     describe('Odd length strings test', function() {
         var input = ""; 
-
         for (var i = 0; i < 100; i++) {       
             var str = simpleRandomString(100, 1000);
             if(isOdd(str.length)) {
@@ -99,9 +98,8 @@ describe('Longest Palindromic Substring tests', function() {
     })
 
     /* code already converts every even palindrome to odd */
-     describe('Even length strings test', function() {
+    describe('Even length strings test', function() {
         var input = ""; 
-
         for (var i = 0; i < 100; i++) {       
             var str = simpleRandomString(100, 1000);
             if(!isOdd(str.length)) {
@@ -117,16 +115,33 @@ describe('Longest Palindromic Substring tests', function() {
         });
     })
     
-    describe('Interleave string test', function() {
+    describe('Interleave string tests', function() {
         var input = simpleRandomString(1, 5);
         var result = interleaveString(input);
+        
+        it('Should begin with "@" and end with "$"', function() {           
+            var assert = false;
+            if (result.startsWith("@") && (result.slice(-1) === "$")) {
+                assert = true;
+            }
+            
+            expect(result).toBeDefined();
+            expect(result).not.toBe(null);
+            expect(assert).toEqual(true);
+        });
 
-        var assert = false;
-        if (result.startsWith("@") && (result.slice(-1) === "$")) {
-            assert = true;
-        }
+        it('Should be interleaved with "#', function() {           
+            var assert = false;
+            var count = 0;
+            
+            for (var i = 1; i < result.indexOf(result.substr(result.length -1)); i++) { 
+                if (result[i] === "#") { count += 1;}
+            }
 
-        it('Should begin with @ and end with $ and no. of # >= 1', function() {        
+            if (count === (result.length-1)/2) {
+                assert = true;
+            }
+                
             expect(result).toBeDefined();
             expect(result).not.toBe(null);
             expect(result.split("#").length-1).not.toBeLessThan(1);

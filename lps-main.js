@@ -13,7 +13,7 @@ var mainLoop = function () {
   rl.question("Please provide input string: ", function (input) { 
 
     var output = findLongestPalindromicString(input);
-    console.log('The result is: ', output);
+    console.log('The longest palindromic substring found in: ' + input + ' is: ', output);
 
     rl.question("Would you like to try again? y/n ", function (option) {
       if (option == "y") {

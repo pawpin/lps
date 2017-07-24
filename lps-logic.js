@@ -19,7 +19,7 @@ var lps = (function (str) {
         return result;
     }
 
-    /* calculates max value -largest palindrome is centered at maximum value character */
+    /* calculates max value - largest palindrome is centered at maximum value character */
     var maxArrayValue = function (str, num, pal) {
         var length = 0;     // length of longest palindromic substring
         var centerIdx = 0;  // center index of longest palindromic substring
