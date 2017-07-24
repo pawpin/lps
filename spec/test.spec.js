@@ -7,12 +7,12 @@ var isPalindrome = test.testFunctions.isPalindrome;
 var simpleRandomString = test.testFunctions.simpleRandomString;
 var isOdd = test.testFunctions.isOdd;
 
-var getLongestPalindromicSubstring = logic.lps.findLongestPalindromicString;
+var findLongestPalindromicSubstring = logic.lps.findLongestPalindromicString;
 var interleaveString = logic.lps.interleaveString;
 
 describe('Longest Palindromic Substring tests', function() {
     describe('Empty string test', function() {
-        var result = getLongestPalindromicSubstring("");
+        var result = findLongestPalindromicSubstring("");
         it('Should return bad input for empty string', function() {
             expect(result).toBeDefined();
             expect(result).not.toBe(null);
@@ -21,7 +21,7 @@ describe('Longest Palindromic Substring tests', function() {
     });
 
     describe('Null test', function() {
-        var result = getLongestPalindromicSubstring(null);
+        var result = findLongestPalindromicSubstring(null);
         it('Should return bad input for null', function() {
             expect(result).toBeDefined();
             expect(result).not.toBe(null);
@@ -30,7 +30,7 @@ describe('Longest Palindromic Substring tests', function() {
     });
 
     describe('Undefined test', function() {
-        var result = getLongestPalindromicSubstring();
+        var result = findLongestPalindromicSubstring();
         it('Should return bad input for undefined', function() {
             expect(result).toBeDefined();
             expect(result).not.toBe(null);
@@ -40,7 +40,7 @@ describe('Longest Palindromic Substring tests', function() {
 
     describe('Palindromic string test', function() {
         var input = simpleRandomString(100, 1000);
-        var result = getLongestPalindromicSubstring(input);
+        var result = findLongestPalindromicSubstring(input);
         it('Should return palindromic result', function() {        
             expect(isPalindrome(result)).toBeDefined();
             expect(isPalindrome(result)).not.toBe(null);
@@ -50,7 +50,7 @@ describe('Longest Palindromic Substring tests', function() {
 
     describe('Single char test', function() {
         var input = "c";
-        var result = getLongestPalindromicSubstring("x");
+        var result = findLongestPalindromicSubstring("x");
         it('Should return palindromic result for single char', function() {
             expect(isPalindrome(result)).toBeDefined();
             expect(isPalindrome(result)).not.toBe(null);
@@ -62,7 +62,7 @@ describe('Longest Palindromic Substring tests', function() {
          var str1 = simpleRandomString(10, 500);
          var str2 = simpleRandomString(10, 500);
          var input = str1 + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + str2;
-         var result = getLongestPalindromicSubstring(input);
+         var result = findLongestPalindromicSubstring(input);
          it('Should return palindromic result for whitespace string', function() {
             expect(isPalindrome(result)).toBeDefined();
             expect(isPalindrome(result)).not.toBe(null);
@@ -72,7 +72,7 @@ describe('Longest Palindromic Substring tests', function() {
 
     describe('Random case test', function() {
         var input = simpleRandomString(100, 1000);
-        var result = getLongestPalindromicSubstring(input);
+        var result = findLongestPalindromicSubstring(input);
         it('Should support random case string', function() {        
             expect(isPalindrome(result)).toBeDefined();
             expect(isPalindrome(result)).not.toBe(null);
@@ -89,7 +89,7 @@ describe('Longest Palindromic Substring tests', function() {
             }
         }
 
-        var result = getLongestPalindromicSubstring(input);
+        var result = findLongestPalindromicSubstring(input);
         it('Should support odd length strings', function() {        
             expect(isPalindrome(result)).toBeDefined();
             expect(isPalindrome(result)).not.toBe(null);
@@ -107,7 +107,7 @@ describe('Longest Palindromic Substring tests', function() {
             }
         }
 
-        var result = getLongestPalindromicSubstring(input);
+        var result = findLongestPalindromicSubstring(input);
         it('Should support even length strings', function() {        
             expect(isPalindrome(result)).toBeDefined();
             expect(isPalindrome(result)).not.toBe(null);
