@@ -1,5 +1,5 @@
 # lps
-Simple O(n) solution of the longest palindromic substring problem.
+Simple O(n) solution to the longest palindromic substring problem.
 
 ### problem description
 
