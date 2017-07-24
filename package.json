@@ -1,0 +1,18 @@
+{
+  "name": "lps",
+  "version": "1.0.0",
+  "description": "Node.js implementation of Longest Palindromic String problem",
+  "main": "./lps-main.js",
+  "scripts": {
+    "test": "jasmine",
+    "start": "node lps-main"
+  },
+  "author": "Pawel Pinio", 
+  "license": "ISC",
+  "dependencies": {
+    "readline": "^1.3.0"
+  },
+  "devDependencies": {
+    "jasmine": "^2.6.0"
+  }
+}
