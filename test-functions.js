@@ -1,15 +1,15 @@
-var testFunctions = (function () {
-  'use-strict';
+const testFunctions = ((() => {
+  "use-strict";
 
-  var isPalindrome = function (str) {
+  const isPalindrome = str => {
     if (!str) {
       return false;
     }
     
     str.trim();
     
-    var left = 0;
-    var right = str.length - 1;
+    let left = 0;
+    let right = str.length - 1;
 
     while (left < right) {
       if (str[left++] === str[right--]) {
@@ -18,32 +18,30 @@ var testFunctions = (function () {
       return false;
     }
     return true;
-  }
+  };
 
-  var simpleRandomString = function (min, max) {
-    var result = "";
-    var seed = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-    var maxLength = Math.floor(Math.random() * (max - min + 1) + min);
+  const simpleRandomString = (min, max) => {
+    let result = "";
+    const seed = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    const maxLength = Math.floor(Math.random() * (max - min + 1) + min);
 
-    for (var i = 0; i < maxLength; i++) {
+    for (let i = 0; i < maxLength; i++) {
       result += seed.charAt(Math.floor(Math.random() * seed.length));
     }
     return result;
-  }
-
-  var isOdd = function (n) { 
-    return n & 1; 
   };
 
-  var instance = {};  
+  const isOdd = n => n & 1;
+
+  const instance = {};  
 
   instance.isPalindrome = isPalindrome;
   instance.simpleRandomString = simpleRandomString;
   instance.isOdd = isOdd;
   return instance;
 
-})();
+}))();
 
 module.exports = {
-  testFunctions
+    testFunctions
 }

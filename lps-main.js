@@ -1,21 +1,21 @@
-'use-strict';
-var readline = require('readline');
-var logic = require('./lps-logic.js');
+"use-strict";
+const readline = require('readline');
+const logic = require('./lps-logic.js');
 
-var findLongestPalindromicString = logic.lps.findLongestPalindromicString;
+const findLongestPalindromicString = logic.lps.findLongestPalindromicString;
 
-var rl = readline.createInterface({
+const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
 
-var mainLoop = function () {
-  rl.question("Please provide input string: ", function (input) { 
+const mainLoop = () => {
+  rl.question("Please provide input string: ", input => { 
 
-    var output = findLongestPalindromicString(input);
-    console.log('The longest palindromic substring found in: ' + input + ' is: ', output);
+    const output = findLongestPalindromicString(input);
+    console.log(`The longest palindromic substring found in: ${input} is: `, output);
 
-    rl.question("Would you like to try again? y/n ", function (option) {
+    rl.question("Would you like to try again? y/n ", option => {
       if (option == "y") {
         mainLoop(); 
       } else {
