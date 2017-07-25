@@ -85,8 +85,3 @@ const lps = ((str => {
 module.exports = {
     lps
 }
-
-// export default {
-//     lps
-// };
-
