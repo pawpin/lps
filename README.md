@@ -14,7 +14,7 @@ Given a string, find the longest palindromic substring. See https://en.wikipedia
 1. *./spec* - jasmine unit tests
 2. *lps-logic.js* - solver implementation 
 3. *lps-main.js* - application entry point
-4. *test-functions* - unit test helper functions
+4. *test-functions.js* - unit test helper functions
 
 ### project setup
 
